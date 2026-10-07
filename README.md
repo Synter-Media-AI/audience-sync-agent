@@ -1,13 +1,36 @@
 # Audience Sync MCP Starter Kit — Sync Audiences Across All Ad Platforms
 
-> **This is a recipe repo.** The Synter MCP server itself lives at [Synter-Media-AI/mcp-server](https://github.com/Synter-Media-AI/mcp-server): 19 ad platforms, campaign creation on 14, one-click install in Cursor, Claude, ChatGPT, and VS Code. Issues, releases, and ⭐ go there.
+> **This is a recipe repo.** The Synter MCP server itself lives at [Synter-Media-AI/mcp-server](https://github.com/Synter-Media-AI/mcp-server): create, launch, and optimize campaigns across the major ad platforms, with one-click install in Cursor, Claude, ChatGPT, and VS Code. Issues, releases, and ⭐ go there.
 
 
 [![MCP Compatible](https://img.shields.io/badge/MCP-compatible-blue)](https://modelcontextprotocol.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Platform: Multi-Platform](https://img.shields.io/badge/Platform-Audience%20Sync-8B5CF6)](https://syntermedia.ai)
+[![Platform: Multi-Platform](https://img.shields.io/badge/Platform-Audience%20Sync-8B5CF6)](https://synterai.com)
 
 **Upload your email list to every ad platform in one command.** Open this repo in Amp, Cursor, or VS Code and sync Customer Match, Custom Audiences, and Matched Audiences across Google, Meta, LinkedIn, TikTok, X, Reddit, and Amazon — all at once.
+
+---
+
+## Install
+
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=synter-ads&config=eyJ1cmwiOiJodHRwczovL21jcC5zeW50ZXJhaS5jb20ifQ==)
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Synter-0098FF?logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=synter-ads&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.synterai.com%22%7D)
+
+- **Cursor / VS Code:** click a button above, or open this repo — it ships `.cursor/mcp.json` and `.vscode/mcp.json`.
+- **Claude Code:** this repo ships `.mcp.json`; or run:
+  ```bash
+  claude mcp add --transport http synter-ads https://mcp.synterai.com
+  ```
+- **Codex:**
+  ```bash
+  codex mcp add synter-ads --url https://mcp.synterai.com
+  codex mcp login synter-ads
+  ```
+- **Claude Desktop:** copy `claude_desktop_config.json` into your Claude config directory (macOS: `~/Library/Application Support/Claude/`, Windows: `%APPDATA%\Claude\`) and replace the placeholder API key.
+
+Your client opens Synter sign-in in the browser (OAuth). New here? Create an account at https://synterai.com/sign-up. Headless/CI fallback: send `X-Synter-Key` with a key from https://synterai.com/developer.
+
+The MCP server itself: https://github.com/Synter-Media-AI/mcp-server
 
 ---
 
@@ -20,27 +43,6 @@ The problem? Every platform has a different audience upload format, different ha
 An AI agent turns a 2-hour task into a single command. "Upload my customer list to all platforms" handles formatting, SHA-256 hashing, API uploads, and Lookalike creation across every connected platform.
 
 **Best for:** Remarketing, first-party data activation, suppression lists, lookalike audience building, anyone who advertises on multiple platforms.
-
----
-
-## Quick Start (30 Seconds)
-
-### Amp / Cursor / VS Code (Copilot)
-
-1. **Get a free API key** at [syntermedia.ai/developer](https://syntermedia.ai/developer)
-2. **Set the key:**
-   ```bash
-   export SYNTER_API_KEY=syn_your_key_here
-   ```
-3. **Open this repo** in your editor
-4. **Start chatting** — MCP tools are pre-configured in `.mcp.json`
-
-### Claude Desktop
-
-Copy `claude_desktop_config.json` to your Claude config directory and replace the API key:
-
-- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 ---
 
@@ -154,7 +156,7 @@ Copy `claude_desktop_config.json` to your Claude config directory and replace th
 >
 > **What I'll automate:**
 > - Monthly pull from your connected CRM (HubSpot/Shopify/Klaviyo)
-> - Re-upload to all 6 platforms
+> - Re-upload to all connected platforms
 > - Log match rates and alert if any drop significantly (could indicate data quality issues)
 >
 > **Why monthly matters:** A 6-month-old customer list is targeting people who may have churned, changed emails, or no longer match your ICP. Fresh data = better targeting = lower CPA.
@@ -231,4 +233,4 @@ Monthly is the minimum. For fast-moving businesses (ecommerce, SaaS with monthly
 
 MIT — see [LICENSE](LICENSE) for details.
 
-Built by [Synter](https://syntermedia.ai) · [Get API Key](https://syntermedia.ai/developer) · [Documentation](https://syntermedia.ai/docs)
+Built by [Synter](https://synterai.com) · [Get API Key](https://synterai.com/developer) · [Documentation](https://synterai.com/docs)
